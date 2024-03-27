@@ -26,12 +26,17 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('/authors', AuthorController::class);
+
 Route::get('/authors/{author}/writing/{id}', [AuthorController::class, 'showWriting'])->name('authors.writing');
 
 Route::prefix('dashboard')->middleware(['auth'])->name('dashboard.')->group(function () {
     Route::resource('authors', AuthorDashboardController::class);
     Route::resource('writings', WritingDashboardController::class);
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

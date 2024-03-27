@@ -3,8 +3,8 @@
 
 
     <h1>Profile</h1>
-    <p>Author name: [name here]</p>
-    <p>Bio: [bio here]</p>
+    <p>Author name: {{ $data->name }}</p>
+    <p>Bio: {{ $data->bio }}</p>
 
     <h2>Social Media</h2>
     <p>Facebook: <a href="#">Link</a></p>

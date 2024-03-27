@@ -2,19 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AuthorController extends Controller
 {
     /**
-     * Display a listing of the resource..
+     * Display a listing of the resource.
      * View list of all authors.
      */
     public function index()
     {
-        $author_data =User::all();
-    
-        return view('pages.testing.author-list', compact('author_data'));
+        $author_data = User::all();
+
+        return view('pages.default.authors-list', compact('author_data'));
+
+        return view('pages.testing.authors-list', compact('author_data'));
     }
 
     /**
@@ -22,7 +25,6 @@ class AuthorController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -30,8 +32,6 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
-        
-        //
     }
 
     /**
@@ -40,9 +40,10 @@ class AuthorController extends Controller
     public function show(string $id)
     {
         $data = User::find($id);
-    
+
         return view('pages.testing.author-profile', compact('data'));
-        //
+
+        return view('pages.default.author-profile', compact('data'));
     }
 
     /**
@@ -50,7 +51,6 @@ class AuthorController extends Controller
      */
     public function edit(string $id)
     {
-        //
     }
 
     /**
@@ -58,7 +58,6 @@ class AuthorController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
     }
 
     /**
@@ -66,6 +65,5 @@ class AuthorController extends Controller
      */
     public function destroy(string $id)
     {
-        //
     }
 }
