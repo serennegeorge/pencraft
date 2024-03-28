@@ -33,17 +33,18 @@ class AuthorController extends Controller
     public function store(Request $request)
     {
     }
-
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function showWriting(string $user_id, string $writing_id)
     {
-        $data = User::find($id);
-
-        return view('pages.testing.author-profile', compact('data'));
-
-        return view('pages.default.author-profile', compact('data'));
+        // Find a user by id
+        $author = User::find($user_id);
+        // Find an article by id
+        $writing = Writing::find($writing_id);
+        return view('pages.testing.author-writing', compact('author', 'writing'));
+    }
+    
     }
 
     /**
