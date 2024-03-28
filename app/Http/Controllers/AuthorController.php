@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Writing;
 use Illuminate\Http\Request;
 
 class AuthorController extends Controller
@@ -15,9 +16,13 @@ class AuthorController extends Controller
     {
         $author_data = User::all();
 
-        return view('pages.default.authors-list', compact('author_data'));
-
         return view('pages.testing.authors-list', compact('author_data'));
+
+        return view('pages.testing.author-list-testing', compact('author_data'));
+
+        return view('pages.custom.authors-list', compact('author_data'));
+
+        return view('pages.default.authors-list', compact('author_data'));
     }
 
     /**
@@ -33,6 +38,19 @@ class AuthorController extends Controller
     public function store(Request $request)
     {
     }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        $data = User::find($id);
+
+        $writing_data = $data->writings;
+
+        return view('pages.default.author-profile', compact('data', 'writing_data'));
+    }
+
     /**
      * Display the specified resource.
      */
@@ -42,9 +60,8 @@ class AuthorController extends Controller
         $author = User::find($user_id);
         // Find an article by id
         $writing = Writing::find($writing_id);
+
         return view('pages.testing.author-writing', compact('author', 'writing'));
-    }
-    
     }
 
     /**
