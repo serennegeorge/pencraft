@@ -1,4 +1,4 @@
-<x-mylayouts.layouts-dafault>
+<x-mylayouts.layouts-default>
 
     @include('pages.default.author-profile-array_search')
 
@@ -6,4 +6,4 @@
 
 
 
-</x-mylayouts.layouts-dafault>
+</x-mylayouts.layouts-default>

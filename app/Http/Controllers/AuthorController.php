@@ -16,13 +16,9 @@ class AuthorController extends Controller
     {
         $author_data = User::all();
 
-        return view('pages.testing.authors-list', compact('author_data'));
-
-        return view('pages.testing.author-list-testing', compact('author_data'));
-
-        return view('pages.custom.authors-list', compact('author_data'));
-
         return view('pages.default.authors-list', compact('author_data'));
+        
+        return view('pages.testing.authors-list', compact('author_data'));
     }
 
     /**
