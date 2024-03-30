@@ -11,13 +11,12 @@ class AuthorDashboardController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-
     {
         $author = Auth::user();
 
         $writing_data = $author->writings;
 
-        return view('dashboard.author-dashboard', compact('author', 'writing_data)'));
+        return view('dashboard.author-dashboard', compact('author', 'writing_data'));
     }
 
     /**
@@ -25,7 +24,6 @@ class AuthorDashboardController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -33,7 +31,6 @@ class AuthorDashboardController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**
@@ -41,7 +38,6 @@ class AuthorDashboardController extends Controller
      */
     public function show(string $id)
     {
-        //
     }
 
     /**
@@ -49,7 +45,6 @@ class AuthorDashboardController extends Controller
      */
     public function edit(string $id)
     {
-        //
     }
 
     /**
@@ -57,7 +52,6 @@ class AuthorDashboardController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
     }
 
     /**
@@ -65,6 +59,5 @@ class AuthorDashboardController extends Controller
      */
     public function destroy(string $id)
     {
-        //
     }
 }
