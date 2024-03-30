@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('Password1'),
                 'created_at' => Carbon::now(),
                 'updated_at' => null,
-                'profile' => 'images/profiles/default.jpg',
+                'profile' => 'images/profiles/ryan-hoffman-Ft4p5E9HjTQ-unsplash.jpg',
             ],
             [
                 'name' => 'Jane Doe',

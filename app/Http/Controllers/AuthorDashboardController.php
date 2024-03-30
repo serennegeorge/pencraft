@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AuthorDashboardController extends Controller
 {
@@ -10,8 +11,13 @@ class AuthorDashboardController extends Controller
      * Display a listing of the resource.
      */
     public function index()
+
     {
-        //
+        $author = Auth::user();
+
+        $writing_data = $author->writings;
+
+        return view('dashboard.author-dashboard', compact('author', 'writing_data)'));
     }
 
     /**

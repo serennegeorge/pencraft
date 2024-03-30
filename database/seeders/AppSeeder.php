@@ -14,6 +14,7 @@ class AppSeeder extends Seeder
     public function run(): void
     {
         $users = User::factory(6)->create();
+        $users = User::all();
 
         foreach ($users as $author) {
             $number = rand(1, 5);
