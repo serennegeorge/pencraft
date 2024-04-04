@@ -13,10 +13,11 @@ class AuthorDashboardController extends Controller
     public function index()
     {
         $author = Auth::user();
+        $data = Auth::user();
 
         $writing_data = $author->writings;
 
-        return view('dashboard.author-dashboard', compact('author', 'writing_data'));
+        return view('dashboard.author-dashboard', compact('author', 'writing_data', 'data'));
     }
 
     /**

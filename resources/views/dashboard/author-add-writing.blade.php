@@ -1,6 +1,6 @@
 <x-mylayouts.layout-dashboard-default>
-    
-<!-- /resources/views/post/create.blade.php -->
+
+    <!-- /resources/views/post/create.blade.php -->
 
     <h1>Create Post</h1>
 
@@ -35,8 +35,9 @@
 
         <p>
             <button type="submit">Click</button>
-            <a href="#">Cancel</a>
+            <a href="{{ route('dashboard.authors.index') }}">Cancel</a>
         </p>
+
     </form>
 
 </x-mylayouts.layout-dashboard-default>

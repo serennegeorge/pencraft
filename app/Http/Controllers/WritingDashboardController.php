@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePostWriting;
+use App\Models\Writing;
 use GuzzleHttp\Psr7\Message;
 use Illuminate\Http\Request;
 use Illuminate\Mail\Events\MessageSent;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class WritingDashboardController extends Controller
 {
@@ -15,7 +17,6 @@ class WritingDashboardController extends Controller
      */
     public function index()
     {
-        //
     }
 
     /**
@@ -23,13 +24,11 @@ class WritingDashboardController extends Controller
      */
     public function create()
     {
-        return view ('dashboard.author-add-writing');
-
+        return view('dashboard.author-add-writing');
     }
 
     /**
      * Store a newly created resource in storage.
-     * 
      */
     public function store(StorePostWriting $request)
     {
@@ -45,10 +44,16 @@ class WritingDashboardController extends Controller
         $writing->read_unit = $validated['read_unit'];
         $writing->image = 'testing';
         $writing->save();
-        return redirect()->route('dashboard.authors.index')with(message','writing successfully made');
+
+        return redirect()->route('dashboard.authors.index')->with('message', 'Writing successfully added');
     }
 
+    public function imageUpload($file)
+    {
+        $name = $file->hashName();
+        Storage::putFileAs('public/images/media', $file, $name);
 
+        return 'images/media/' . $name;
     }
 
     /**

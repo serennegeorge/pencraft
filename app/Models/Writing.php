@@ -13,4 +13,9 @@ class Writing extends Model
     {
         return route('authors.writing', ['author' => $user_id, 'id' => $writing_id]);
     }
+
+    public function getImage()
+    {
+        return asset('storage/' . $this->image);
+    }
 }
