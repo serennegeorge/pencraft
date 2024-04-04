@@ -45,8 +45,6 @@ class AuthorController extends Controller
         $writing_data = $data->writings;
 
         return view('pages.default.author-profile', compact('data', 'writing_data'));
-
-        return view('pages.TESTING.author-profile', compact('data', 'writing_data'));
     }
 
     /**
@@ -58,6 +56,8 @@ class AuthorController extends Controller
         $author = User::find($user_id);
         // Find an article by id
         $writing = Writing::find($writing_id);
+
+        return view('pages.default.author-writing', compact('author', 'writing'));
 
         return view('pages.testing.author-writing', compact('author', 'writing'));
     }
