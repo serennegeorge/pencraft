@@ -83,13 +83,22 @@
                     <div class="card card-shadow border-0 mb-4">
                         <!-- Row -->
                         <div class="row no-gutters">
-                            <div class="col-md-5 pro-pic" style="background:url('{{ $data->getImage() }}') no-repeat center center / cover">
+                            <div class="col-md-5 pro-pic"
+                                style="background:url('{{ $data->getImage() }}') no-repeat center center / cover">
                                 <div class="card-img-overlay">
                                     <ul class="list-inline position-relative text-center">
-                                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block text-white px-1"><i class="icon-social-facebook"></i></a></li>
-                                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block text-white px-1"><i class="icon-social-twitter"></i></a></li>
-                                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block text-white px-1"><i class="icon-social-instagram"></i></a></li>
-                                        <li class="list-inline-item"><a href="#" class="text-decoration-none d-block text-white px-1"><i class="icon-social-behance"></i></a></li>
+                                        <li class="list-inline-item"><a href="#"
+                                                class="text-decoration-none d-block text-white px-1"><i
+                                                    class="icon-social-facebook"></i></a></li>
+                                        <li class="list-inline-item"><a href="#"
+                                                class="text-decoration-none d-block text-white px-1"><i
+                                                    class="icon-social-twitter"></i></a></li>
+                                        <li class="list-inline-item"><a href="#"
+                                                class="text-decoration-none d-block text-white px-1"><i
+                                                    class="icon-social-instagram"></i></a></li>
+                                        <li class="list-inline-item"><a href="#"
+                                                class="text-decoration-none d-block text-white px-1"><i
+                                                    class="icon-social-behance"></i></a></li>
                                     </ul>
                                 </div>
                             </div>

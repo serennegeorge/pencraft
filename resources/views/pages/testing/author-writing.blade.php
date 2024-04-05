@@ -12,7 +12,9 @@
 
         <div class="content">
             <div class="writing-image text-center">
-                <img style="max-height: 200px; text-align: center;" src="http://localhost:8000/storage/images/profile/Qc1K7UZLDYCx0GxeLiodBQaiBXsYW1z1yAET5jUN.webp" alt="Image">
+                <img style="max-height: 200px; text-align: center;"
+                    src="http://localhost:8000/storage/images/profile/Qc1K7UZLDYCx0GxeLiodBQaiBXsYW1z1yAET5jUN.webp"
+                    alt="Image">
             </div>
 
             {{ $writing->description }}
