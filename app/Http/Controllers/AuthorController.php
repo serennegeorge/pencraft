@@ -45,6 +45,8 @@ class AuthorController extends Controller
         $writing_data = $data->writings;
 
         return view('pages.default.author-profile', compact('data', 'writing_data'));
+
+        return view('pages.testing.author-profile', compact('data', 'writing_data'));
     }
 
     /**
