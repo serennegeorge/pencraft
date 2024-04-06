@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateProfileRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class AuthorDashboardController extends Controller
 {
@@ -46,13 +49,34 @@ class AuthorDashboardController extends Controller
      */
     public function edit(string $id)
     {
+        $author = Auth::user();
+
+        return view('dashboard.author-edit-profile', compact('author'));
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateProfileRequest $request, string $id)
     {
+        $validated = $request->validated();
+        $author = User::find($id);
+        $author->name = $validated['name'];
+        $author->bio = $validated['bio'];
+        if ($request->has('image')) {
+            $author->profile->$this->imageUpload($validated['image']);
+        }
+        $author->save();
+        return redirect()->route('dashboard.authors.index')->with('message', 'Profile Successfully Updated');
+    }
+
+    public function imageUpload($file)
+    {
+        $name = $file->hashName();
+        Storage::putFileAs('public/images/media', $file, $name);
+
+        return 'images/media/' . $name;
     }
 
     /**
