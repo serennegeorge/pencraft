@@ -22,7 +22,7 @@ class WritingFactory extends Factory
             'type' => $types[fake()->numberBetween(0, 2)],
             'title' => fake()->realText(fake()->numberBetween(20, 40)),
             'description' => fake()->paragraph(fake()->numberBetween(1, 4)),
-            'image' => '[image location here]',
+            'image' => '/images/media/default.jpg',
             'read_time' => fake()->numberBetween(1, 10),
             'read_unit' => 'minutes',
         ];

@@ -16,6 +16,6 @@ class Writing extends Model
 
     public function getImage()
     {
-        return asset('storage/' . $this->image);
+        return asset('storage/'. $this->image);
     }
 }

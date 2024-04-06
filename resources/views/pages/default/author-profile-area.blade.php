@@ -1,82 +1,53 @@
-{{-- Source: https://bootdey.com/snippets/view/Profile-bio --}}
-<style>
-    .card {
-        -moz-border-radius: 2%;
-        -webkit-border-radius: 2%;
-        border-radius: 2%;
-        box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.08);
-    }
+<!-- Page Content -->
+<div class="container">
 
-    .profile .profile-body {
-        padding: 20px;
-        background: #f7f7f7;
-    }
+    <!-- Page Heading -->
+    <h1 class="my-4">Page Heading
+      <small>Secondary Text</small>
+    </h1>
 
-    .profile .profile-bio {
-        background: #fff;
-        position: relative;
-        padding: 15px 10px 5px 15px;
-    }
-
-    .profile .profile-bio a {
-        left: 50%;
-        bottom: 20px;
-        margin: -62px;
-        text-align: center;
-        position: absolute;
-    }
-
-    .profile .profile-bio h2 {
-        margin-top: 0;
-        font-weight: 200;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color: #585f69;
-        margin-top: 5px;
-        text-shadow: none;
-        font-weight: normal;
-        font-family: 'Open Sans', sans-serif;
-    }
-
-    h2 {
-        font-size: 24px;
-        line-height: 33px;
-    }
-
-    p,
-    li,
-    li a {
-        color: #555;
-    }
-</style>
-
-
-
-
-<div class="container bootstrap snippets bootdey">
-    <div class="profile card">
-        <div class="profile-body">
-            <div class="profile-bio">
-                <div class="row">
-                    <div class="col-md-5 text-center">
-                        <img class="img-thumbnail md-margin-bottom-10" src="{{ $data->getImage() }}" alt="">
-                    </div>
-                    <div class="col-md-7">
-                        <h2>{{ $data->name }}</h2>
-                        <span><strong>Job:</strong> Web Developer</span>
-                        <span><strong>Position:</strong> Web Designer</span>
-                        <hr>
-                        <p>{{ $data->bio }}</p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Project One -->
+    <div class="row">
+      <div class="col-md-7">
+        <a href="#">
+          <img class="img-fluid rounded mb-3 mb-md-0" src="https://via.placeholder.com/700x300" alt="">
+        </a>
+      </div>
+      <div class="col-md-5">
+        <h3>{{ $writing->title }}</h3>
+        <p>{{ substr $writing->description,0,30 }}</p></p>
+        <a class="btn btn-primary"href="{{ $writing->getLink($data->id, $writing->id) }}">View</a>
+      </div>
     </div>
-</div>
+    <!-- /.row -->
+
+    <hr>
+    @endforeach
+
+    <!-- Pagination -->
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">1</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">2</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">3</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+  <!-- /.container -->
