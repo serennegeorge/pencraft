@@ -5,7 +5,7 @@
     <h1 class="my-4">Page Heading
       <small>Secondary Text</small>
     </h1>
-
+    @foreach ($writing_data as $writing)
     <!-- Project One -->
     <div class="row">
       <div class="col-md-7">
@@ -15,7 +15,7 @@
       </div>
       <div class="col-md-5">
         <h3>{{ $writing->title }}</h3>
-        <p>{{ substr $writing->description,0,30 }}</p></p>
+        {{-- <p>{{ substr $writing->description,0,30 }}</p></p> --}}
         <a class="btn btn-primary"href="{{ $writing->getLink($data->id, $writing->id) }}">View</a>
       </div>
     </div>

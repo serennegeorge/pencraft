@@ -37,7 +37,7 @@
             <button type="submit">Click</button>
             <a href="{{ route('dashboard.authors.index') }}">Cancel</a>
         </p>
- 
+
     </form>
 
 </x-mylayouts.layout-dashboard-default>

@@ -48,7 +48,7 @@ class User extends Authenticatable
 
     public function getImage()
     {
-        return asset('storage/' . $this->profile);
+        return asset('storage/'. $this->profile);
     }
 
     /**

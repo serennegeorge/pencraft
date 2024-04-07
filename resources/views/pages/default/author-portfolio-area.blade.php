@@ -5,12 +5,12 @@
     <h1 class="my-4">Page Heading
         <small>Secondary Text</small>
     </h1>
+    @foreach ( $writing_data as $writing)
 
-    <!-- Project One -->
     <div class="row">
         <div class="col-md-3">
             <a href="#">
-                <img style="width: 350px;height:250px" class=img-fluid rounded mb-3 mb-md-0"
+                <img style="width: 350px;height:250px" class="img-fluid rounded mb-3 mb-md-0"
                     src="{{ $writing->getImage()}}" alt="">
             </a>
         </div>
@@ -22,6 +22,8 @@
             <a class="btn btn-primary" href="#">View Project</a>
         </div>
     </div>
+    @endforeach
+    <!-- Project One -->
     <!-- /.row -->
 
     <hr>
