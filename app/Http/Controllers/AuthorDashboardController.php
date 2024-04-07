@@ -49,7 +49,6 @@ class AuthorDashboardController extends Controller
         $author = Auth::user();
 
         return view('dashboard.author-edit-profile', compact('author'));
-
     }
 
     /**
