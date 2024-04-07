@@ -1,6 +1,15 @@
 <x-mylayouts.layout-dashboard-default>
 
 
+
+    <form action="{{ route ('dashboard.authors.update',[author->id]) }}" method="POST">
+        @csrf
+        @method('PUT')
+
+
+        
+
+
     <div class="errors">
         @foreach ($errors->all() as $error)
         <li>{{ $error }}</li>
@@ -12,7 +21,7 @@
     <div class="card1">
         <div class="card-body1">
 
-            <h1>TITLE GOES HERE</h1>
+            <h1>hey</h1>
 
             <form action="{{ route('dashboard.authors.update', ['author' => $author->id]) }}" method="POST"
                 enctype="multipart/form-data">

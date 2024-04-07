@@ -30,7 +30,8 @@
             <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
             <li class="breadcrumb-item"><a href="#">Pencraft</a></li>
             <li class="breadcrumb-item"><a href="#">Writings</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('authors.edit',['author'=>Auth::id()]) }}">Profile</a></li>
+            <li class="breadcrumb-item">
+                <a href="{{ route('dashboard.authors.edit',['author'=>Auth::id()]) }}">Profile</a></li>
 
             <li class="breadcrumb-item active">
                 <a href="{{ route('logout') }}" onclick="event.preventDefault();

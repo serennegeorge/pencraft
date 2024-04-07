@@ -60,19 +60,21 @@ class AuthorDashboardController extends Controller
         $author = User::find($id);
         $author->name = $validated['name'];
         $author->bio = $validated['bio'];
+
         if ($request->has('image')) {
             $author->profile->$this->imageUpload($validated['image']);
         }
         $author->save();
+
         return redirect()->route('dashboard.authors.index')->with('message', 'Profile Successfully Updated');
     }
 
     public function imageUpload($file)
     {
         $name = $file->hashName();
-        Storage::putFileAs('public/images/media', $file, $name);
+        Storage::putFileAs('public/images/profiles', $file, $name);
 
-        return 'images/media/' . $name;
+        return 'images/profiles/' . $name;
     }
 
     /**
