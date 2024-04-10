@@ -18,13 +18,6 @@
         </li>
     </ul>
 
-    <!-- Tab panes -->
-    <div class="tab-content">
-        <div class="tab-pane container active" id="home">...</div>
-        <div class="tab-pane container fade" id="menu1">...</div>
-        <div class="tab-pane container fade" id="menu2">...</div>
-    </div>
-
-
+   
 
 </x-mylayouts.layout-default>
