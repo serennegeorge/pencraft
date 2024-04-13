@@ -1,5 +1,7 @@
 <x-mylayouts.layout-dashboard-default>
 
+
+
     <!-- /resources/views/post/create.blade.php -->
 
     <h1>Create Post</h1>
@@ -16,10 +18,10 @@
 
     <!-- Create Post Form -->
 
-
-    <form action="{{ route('dashboard.writings.store') }}" method="POST">
+    <form action="{{ route('dashboard.writings.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('POST')
+
         <p>Type</p>
         <p><input type="text" name="type"></p>
         <p>Title</p>
@@ -27,11 +29,12 @@
         <p>Description</p>
         <p><input type="text" name="description"></p>
         <p>Image</p>
-        <p><input type="text" name="image"></p>
+        <p><input type="file" name="image"></p>
         <p>Read Time</p>
         <p><input type="text" name="read_time"></p>
         <p>Read Unit</p>
         <p><input type="text" name="read_unit"></p>
+
 
         <p>
             <button type="submit">Click</button>
@@ -39,5 +42,6 @@
         </p>
 
     </form>
+
 
 </x-mylayouts.layout-dashboard-default>
