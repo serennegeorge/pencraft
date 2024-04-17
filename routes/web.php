@@ -17,13 +17,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [AuthorController::class, 'index'])->name('home');
 
 Route::resource('/authors', AuthorController::class);
 
@@ -31,5 +31,5 @@ Route::get('/authors/{author}/writing/{id}', [AuthorController::class, 'showWrit
 
 Route::prefix('dashboard')->middleware(['auth'])->name('dashboard.')->group(function () {
     Route::resource('authors', AuthorDashboardController::class);
-    Route::resource('writings ', WritingDashboardController::class);
+    Route::resource('writings', WritingDashboardController::class);
 });
