@@ -372,7 +372,7 @@
         .badge.red,
         .event_red {
             color: white;
-            background-color: #F44336;
+            background-color: #b71b10;
         }
     </style>
 
@@ -419,6 +419,7 @@
                                     <h6 class="mb-3 font-weight-medium">{{ $data->name }}</h6>
                                     <p>{{ $data->bio }}</p>
                                     <p><a href="{{ $data->getLink() }}">View Profile</a></p>
+                                    <p><a href="#">Link</a></p>
                                 </div>
                             </div>
                         </div>
