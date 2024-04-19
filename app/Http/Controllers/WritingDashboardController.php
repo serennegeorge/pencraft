@@ -40,7 +40,7 @@ class WritingDashboardController extends Controller
         $writing->description = $validated['description'];
         $writing->read_time = $validated['read_time'];
         $writing->read_unit = $validated['read_unit'];
-        $writing->image = 'testing';
+        $writing->image = $this->imageUpload($validated['image']);
         $writing->save();
 
         return redirect()->route('dashboard.authors.index')->with('message', 'Writing successfully added');
@@ -51,7 +51,7 @@ class WritingDashboardController extends Controller
         $name = $file->hashName();
         Storage::putFileAs('public/images/media', $file, $name);
 
-        return 'images/media/' . $name;
+        return 'images/media/'.$name;
     }
 
     /**
@@ -59,7 +59,6 @@ class WritingDashboardController extends Controller
      */
     public function show(string $id)
     {
-        //
     }
 
     /**
@@ -67,7 +66,6 @@ class WritingDashboardController extends Controller
      */
     public function edit(string $id)
     {
-        //
     }
 
     /**
@@ -75,7 +73,6 @@ class WritingDashboardController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
     }
 
     /**
@@ -83,6 +80,5 @@ class WritingDashboardController extends Controller
      */
     public function destroy(string $id)
     {
-        //
     }
 }

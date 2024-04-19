@@ -28,8 +28,32 @@
                     <a class="nav-link" href="{{ route('authors.index') }}">Authors</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">Portal</a>
+                    <a class="nav-link" href="{{ route('login') }}">Dashboard</a>
                 </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                @auth
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </li>
+                @endauth
+
+                @guest
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('register') }}">Register</a>
+                </li>
+                @endguest
             </ul>
         </div>
     </nav>
