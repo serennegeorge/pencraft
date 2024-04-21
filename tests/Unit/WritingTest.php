@@ -13,4 +13,8 @@ class WritingTest extends TestCase
     {
         $this->assertTrue(true);
     }
+
+    /**
+     *
+     */
 }
