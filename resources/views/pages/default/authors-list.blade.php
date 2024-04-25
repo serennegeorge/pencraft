@@ -1,466 +1,228 @@
 <x-mylayouts.layout-default>
 
-    {{-- Source: https://bootdey.com/snippets/view/User-list-cards--}}
-    <div class="container">
-        <div class="row">
-
-
-            @foreach ($author_data as $data)
-            <div class="col-md-12">
-                <img style="width: 150px; height: 150px" src="{{ $data->getImage() }}" alt="">
-                <p>Author: {{ $data->name }}</p>
-                <p>Bio: {{ $data->bio }}</p>
-                <p><a href="{{ $data->getLink() }}">Link</a></p>
-            </div>
-            @endforeach
-
-
-
-        </div>
-    </div>
+    {{-- Source: https://bbbootstrap.com/snippets/classic-team-member-cards-21609083 --}}
 
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            font-weight: 400;
-            background-color: #f0f3f5;
-            margin-top: 40px;
-        }
-
-        /*==============================*/
-        /*====== siderbar user profile =====*/
-        /*==============================*/
-        .nav>li>a.userdd {
-            padding: 5px 15px
-        }
-
-        .userprofile {
-            width: 100%;
-            float: left;
-            clear: both;
-            margin: 40px auto
-        }
-
-        .userprofile .userpic {
-            height: 100px;
-            width: 100px;
-            clear: both;
-            margin: 0 auto;
-            display: block;
-            border-radius: 100%;
-            box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
-            -moz-box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
-            -webkit-box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
-            -ms-box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
-            position: relative;
-        }
-
-        .userprofile .userpic .userpicimg {
-            height: auto;
-            width: 100%;
-            border-radius: 100%;
-        }
-
-        .username {
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 20px;
-            color: #000000;
             margin-top: 20px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .username+p {
-            color: #607d8b;
-            font-size: 13px;
-            line-height: 15px;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
-        }
-
-        .settingbtn {
-            height: 30px;
-            width: 30px;
-            border-radius: 30px;
-            display: block;
-            position: absolute;
-            bottom: 0px;
-            right: 0px;
-            line-height: 30px;
-            vertical-align: middle;
-            text-align: center;
-            padding: 0;
-            box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.15);
-            -moz-box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.15);
-            -webkit-box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.15);
-            -ms-box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.15);
-        }
-
-        .userprofile.small {
-            width: auto;
-            clear: both;
-            margin: 0px auto;
-        }
-
-        .userprofile.small .userpic {
-            height: 40px;
-            width: 40px;
-            margin: 0 10px 0 0;
-            display: block;
-            border-radius: 100%;
-            box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
-            -moz-box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
-            -webkit-box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
-            -ms-box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
-            position: relative;
-            float: left;
-        }
-
-        .userprofile.small .textcontainer {
-            float: left;
-            max-width: 100px;
-            padding: 0
-        }
-
-        .userprofile.small .userpic .userpicimg {
-            min-height: 100%;
-            width: 100%;
-            border-radius: 100%;
-        }
-
-        .userprofile.small .username {
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 21px;
-            color: #000000;
-            margin: 0px;
-            float: left;
-            width: 100%;
-        }
-
-        .userprofile.small .username+p {
-            color: #607d8b;
-            font-size: 13px;
-            float: left;
-            width: 100%;
-            margin: 0;
-        }
-
-        /*==============================*/
-        /*====== Social Profile css =====*/
-        /*==============================*/
-        .countlist h3 {
-            margin: 0;
-            font-weight: 400;
-            line-height: 28px;
-        }
-
-        .countlist {
-            text-transform: uppercase
-        }
-
-        .countlist li {
-            padding: 15px 30px 15px 0;
-            font-size: 14px;
-            text-align: left;
-        }
-
-        .countlist li small {
-            font-size: 12px;
-            margin: 0
-        }
-
-        .followbtn {
-            float: right;
-            margin: 22px;
-        }
-
-        .userprofile.social {
-            background: url(http://placehold.it/500x300) no-repeat top center;
-            background-size: 100%;
-            padding: 50px 0;
-            margin: 0
-        }
-
-        .userprofile.social .username {
-            color: #ffffff
-        }
-
-        .userprofile.social .username+p {
-            color: #ffffff;
-            opacity: 0.8
-        }
-
-        .postbtn {
-            position: absolute;
-            right: 5px;
-            top: 5px;
-            z-index: 9
-        }
-
-        .status-upload {
-            width: 100%;
-            float: left;
-            margin-bottom: 15px
-        }
-
-        .posttimeline .panel {
-            margin-bottom: 15px
-        }
-
-        .commentsblock {
-            background: #f8f9fb;
-        }
-
-        .nopaddingbtm {
-            margin-bottom: 0
-        }
-
-        /*==============================*/
-        /*====== Recently connected  heading =====*/
-        /*==============================*/
-        .memberblock {
-            width: 100%;
-            float: left;
-            clear: both;
-            margin-bottom: 15px
+            background: #f5f5f5;
         }
 
         .member {
-            width: 24%;
-            float: left;
-            margin: 2px 1% 2px 0;
-            background: #ffffff;
-            border: 1px solid #d8d0c3;
-            padding: 3px;
+            margin-bottom: 2rem
+        }
+
+        .member .member-top {
             position: relative;
+            background-color: #d7d4d4;
+            margin-bottom: 1.35rem;
             overflow: hidden
         }
 
-        .memmbername {
+        .member .member-top figure {
+            position: relative
+        }
+
+        .member .member-top figure img {
+            display: block;
+            width: 100%;
+            height: auto
+        }
+
+        .member .member-top figure:after {
+            content: '';
             position: absolute;
-            bottom: -30px;
-            background: rgba(0, 0, 0, 0.8);
-            color: #ffffff;
-            line-height: 30px;
-            padding: 0 5px;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            width: 100%;
-            font-size: 11px;
-            transition: 0.5s ease all;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: #673AB7;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .65s cubic-bezier(0.92, 0.17, 0.29, 0.93) 0s;
+            z-index: 50
         }
 
-        .member:hover .memmbername {
-            bottom: 0
+        .member .member-top .social-icons {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -ms-flex-align: stretch;
+            align-items: stretch;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 99;
+            padding: 0;
+            margin: 0;
+            -ms-transform: translateX(-100%);
+            transform: translateX(-100%);
+            transition: all .65s cubic-bezier(0.92, 0.17, 0.29, 0.93) 0s
         }
 
-        .member img {
-            width: 100%;
-            transition: 0.5s ease all;
-        }
-
-        .member:hover img {
-            opacity: 0.8;
-            transform: scale(1.2)
-        }
-
-        .panel-default>.panel-heading {
-            color: #607D8B;
-            background-color: #ffffff;
+        .member .member-top .social-icons label {
+            color: #f2f2f2;
             font-weight: 400;
-            font-size: 15px;
+            margin-right: 4px;
+            font-size: 12px
+        }
+
+        .member .member-top .social-icons .social-icon {
+            display: block;
             border-radius: 0;
-            border-color: #e1eaef;
+            margin: 0;
+            width: 3rem;
+            height: 3rem;
+            line-height: 3rem
+        }
+
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .member .member-top .social-icons .social-icon {
+                width: 2.7rem;
+                height: 2.7rem;
+                line-height: 2.7rem
+            }
+        }
+
+        .member .member-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem
+        }
+
+        .member .member-title a {
+            color: #212121
+        }
+
+        .member .member-title a:hover,
+        .member .member-title a:focus {
+            color: #673AB7
+        }
+
+        .member .member-title small {
+            display: inline;
+            font-size: 80%;
+            color: #E91E63;
+            font-weight: 600
+        }
+
+        .member .member-title:after {
+            content: '';
+            clear: both;
+            display: table
+        }
+
+        .member.text-center .member-title {
+            margin-bottom: 0.85rem
+        }
+
+        .member.text-center .member-title small {
+            display: block;
+            margin-top: 0.6rem
+        }
+
+        .member:hover .member-top figure:after {
+            visibility: visible;
+            opacity: 0.35
+        }
+
+        .member:hover .member-top .social-icons {
+            -ms-transform: translateX(0);
+            transform: translateX(0)
+        }
+
+        .swiper-container .member {
+            margin-bottom: 0
+        }
+
+        .swiper-container .member p:last-child {
+            margin-bottom: 0
         }
 
 
-
-        .btn-circle {
-            width: 30px;
-            height: 30px;
-            padding: 6px 0;
-            border-radius: 15px;
-            text-align: center;
-            font-size: 12px;
-            line-height: 1.428571429;
+        .social-icons {
+            margin-bottom: 1rem
         }
 
-        .page-header.small {
-            position: relative;
-            line-height: 22px;
-            font-weight: 400;
-            font-size: 20px;
+        .social-icons:after {
+            content: '';
+            display: table;
+            clear: both
         }
 
-        .favorite i {
-            color: #eb3147;
-        }
-
-        .btn i {
-            font-size: 17px;
-        }
-
-        .panel {
-            box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.05);
-            -moz-box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.05);
-            -webkit-box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.05);
-            -ms-box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.05);
-            transition: all ease 0.5s;
-            -moz-transition: all ease 0.5s;
-            -webkit-transition: all ease 0.5s;
-            -ms-transition: all ease 0.5s;
-            margin-bottom: 35px;
-            border-radius: 0px;
-            position: relative;
-            border: 0;
+        .social-icons .social-icon {
             display: inline-block;
-            width: 100%;
+            font-size: 1.1rem;
+            width: 2.2rem;
+            height: 2.2rem;
+            line-height: 2.2rem;
+            border-radius: 4px;
+            color: #323232;
+            background-color: #fff;
+            transition: all .65s cubic-bezier(0.92, 0.17, 0.29, 0.93) 0s;
+            margin: 0 0 0.25rem;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1)
         }
 
-        .panel-footer {
-            padding: 10px 15px;
-            background-color: #ffffff;
-            border-top: 1px solid #eef2f4;
-            border-bottom-right-radius: 0;
-            border-bottom-left-radius: 0;
-            color: #607d8b;
+        .social-icons .social-icon+.social-icon {
+            margin-left: 0.25rem
         }
 
-        .panel-blue {
-            color: #ffffff;
-            background-color: #03A9F4;
+        .social-icons .social-icon.circle {
+            border-radius: 50%
         }
 
-        .panel-red.userlist .username,
-        .panel-green.userlist .username,
-        .panel-yellow.userlist .username,
-        .panel-blue.userlist .username {
-            color: #ffffff;
+        .social-icons .social-icon:hover,
+        .social-icons .social-icon:focus {
+            color: #fff;
+            background-color: #673AB7
         }
 
-        .panel-red.userlist p,
-        .panel-green.userlist p,
-        .panel-yellow.userlist p,
-        .panel-blue.userlist p {
-            color: rgba(255, 255, 255, 0.8);
+        .bg-white .social-icons .social-icon {
+            background-color: #d7d4d4
         }
 
-        .panel-red.userlist p a,
-        .panel-green.userlist p a,
-        .panel-yellow.userlist p a,
-        .panel-blue.userlist p a {
-            color: rgba(255, 255, 255, 0.8);
+        .bg-white .social-icons .social-icon:hover,
+        .bg-white .social-icons .social-icon:focus {
+            color: #fff;
+            background-color: #673AB7
         }
 
-        .progress-bar-success,
-        .status.active,
-        .panel-green,
-        .panel-green>.panel-heading,
-        .btn-success,
-        .fc-event,
-        .badge.green,
-        .event_green {
-            color: white;
-            background-color: #8BC34A;
-        }
-
-        .progress-bar-warning,
-        .panel-yellow,
-        .status.pending,
-        .panel-yellow>.panel-heading,
-        .btn-warning,
-        .fc-unthemed .fc-today,
-        .badge.yellow,
-        .event_yellow {
-            color: white;
-            background-color: #FFC107;
-        }
-
-        .progress-bar-danger,
-        .panel-red,
-        .status.inactive,
-        .panel-red>.panel-heading,
-        .btn-danger,
-        .badge.red,
-        .event_red {
-            color: white;
-            background-color: #b71b10;
+        .social-icons.circle .social-icon {
+            border-radius: 50%
         }
     </style>
 
-
-
-
-                @foreach ($author_data as $data)
-
-                <!-- Header -->
-<header class="bg-primary text-center py-5 mb-4">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <div class="container">
-      <h1 class="fw-light text-white">Meet the Team</h1>
-    </div>
-  </header>
+        <div class="row">
 
-  <!-- Page Content -->
-  <div class="container">
-    <div class="row">
-      <!-- Team Member 1 -->
-      <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-0 shadow">
-          <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
-          <div class="card-body text-center">
-            <h5 class="card-title mb-0">Team Member</h5>
-            <div class="card-text text-black-50">Web Developer</div>
-          </div>
-        </div>
-      </div>
-      <!-- Team Member 2 -->
-      <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-0 shadow">
-          <img src="https://source.unsplash.com/9UVmlIb0wJU/500x350" class="card-img-top" alt="...">
-          <div class="card-body text-center">
-            <h5 class="card-title mb-0">Team Member</h5>
-            <div class="card-text text-black-50">Web Developer</div>
-          </div>
-        </div>
-      </div>
-      <!-- Team Member 3 -->
-      <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-0 shadow">
-          <img src="https://source.unsplash.com/sNut2MqSmds/500x350" class="card-img-top" alt="...">
-          <div class="card-body text-center">
-            <h5 class="card-title mb-0">Team Member</h5>
-            <div class="card-text text-black-50">Web Developer</div>
-          </div>
-        </div>
-      </div>
-      <!-- Team Member 4 -->
-      <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-0 shadow">
-          <img src="https://source.unsplash.com/7u5mwbu7qLg/500x350" class="card-img-top" alt="...">
-          <div class="card-body text-center">
-            <h5 class="card-title mb-0">Team Member</h5>
-            <div class="card-text text-black-50">Web Developer</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- /.row -->
+            @foreach ($author_data as $data)
 
-  </div>
-  <!-- /.container -->
-                @endforeach
+            <div class="col-md-3 col-xs-6 col-xss-12">
+                <div class="member text-center">
+                    <div class="member-top">
+                        <figure>
+                            <img style="width: 150px; height: 150px" src="{{ $data->getImage() }}" alt="">
+                            alt={{ $data->name }}>
+                        </figure>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon" title="Facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="social-icon" title="Twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="social-icon" title="Github"><i class="fa fa-github"></i></a>
+                            <a href="#" class="social-icon" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+                        </div><!-- End .social-icons -->
+                    </div><!-- End .member-top -->
+                    <h3 class="member-title"><a href="#">{{ $data->name }}</a> <small>(Co-founder)</small></h3>
+                    <p>{{ $data->bio }}</p>
+                    <p><a href="{{ $data->getLink() }}">View Profile</a></p>
+
+                    @endforeach
 
 
+
+                </div>
             </div>
-
-        </div>
-    </div>
-
-
 
 </x-mylayouts.layout-default>
