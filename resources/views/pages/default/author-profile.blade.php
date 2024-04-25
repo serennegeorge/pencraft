@@ -18,6 +18,4 @@
         </li>
     </ul>
 
-
-
-</x-mylayouts.layout-default>
+    <x-mylayouts.layout-default>

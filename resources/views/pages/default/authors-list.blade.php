@@ -1,6 +1,23 @@
 <x-mylayouts.layout-default>
 
     {{-- Source: https://bootdey.com/snippets/view/User-list-cards--}}
+    <div class="container">
+        <div class="row">
+
+
+            @foreach ($author_data as $data)
+            <div class="col-md-12">
+                <img style="width: 150px; height: 150px" src="{{ $data->getImage() }}" alt="">
+                <p>Author: {{ $data->name }}</p>
+                <p>Bio: {{ $data->bio }}</p>
+                <p><a href="{{ $data->getLink() }}">Link</a></p>
+            </div>
+            @endforeach
+
+
+
+        </div>
+    </div>
 
     <style>
         body {
@@ -376,57 +393,66 @@
         }
     </style>
 
-    <div class="py-5 bg-light team1">
-        <div class="container">
-            <div class="row justify-content-center mb-3">
-                <div class="col-md-7 text-center">
-                    <h3 class="mb-3">Welcome to Pencraft</h3>
-                    <h6 class="subtitle font-weight-normal">You can relay on our amazing features list and also our
-                        customer services will be great experience for you without doubt and in no-time</h6>
-                </div>
-            </div>
-            <div class="row">
+
 
 
                 @foreach ($author_data as $data)
 
-                <!-- column  -->
-                <div class="col-lg-6">
-                    <div class="card card-shadow border-0 mb-4">
-                        <!-- Row -->
-                        <div class="row no-gutters">
-                            <div class="col-md-5 pro-pic"
-                                style="background:url('{{ $data->getImage() }}') no-repeat center center / cover">
-                                <div class="card-img-overlay">
-                                    <ul class="list-inline position-relative text-center">
-                                        <li class="list-inline-item"><a href="#"
-                                                class="text-decoration-none d-block text-white px-1"><i
-                                                    class="icon-social-facebook"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"
-                                                class="text-decoration-none d-block text-white px-1"><i
-                                                    class="icon-social-twitter"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"
-                                                class="text-decoration-none d-block text-white px-1"><i
-                                                    class="icon-social-instagram"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"
-                                                class="text-decoration-none d-block text-white px-1"><i
-                                                    class="icon-social-behance"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-7 bg-white">
-                                <div class="p-4">
-                                    <h6 class="mb-3 font-weight-medium">{{ $data->name }}</h6>
-                                    <p>{{ $data->bio }}</p>
-                                    <p><a href="{{ $data->getLink() }}">View Profile</a></p>
-                                    <p><a href="#">Link</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Row -->
-                    </div>
-                </div>
-                <!-- column  -->
+                <!-- Header -->
+<header class="bg-primary text-center py-5 mb-4">
+    <div class="container">
+      <h1 class="fw-light text-white">Meet the Team</h1>
+    </div>
+  </header>
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <!-- Team Member 1 -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-0 shadow">
+          <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-0">Team Member</h5>
+            <div class="card-text text-black-50">Web Developer</div>
+          </div>
+        </div>
+      </div>
+      <!-- Team Member 2 -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-0 shadow">
+          <img src="https://source.unsplash.com/9UVmlIb0wJU/500x350" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-0">Team Member</h5>
+            <div class="card-text text-black-50">Web Developer</div>
+          </div>
+        </div>
+      </div>
+      <!-- Team Member 3 -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-0 shadow">
+          <img src="https://source.unsplash.com/sNut2MqSmds/500x350" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-0">Team Member</h5>
+            <div class="card-text text-black-50">Web Developer</div>
+          </div>
+        </div>
+      </div>
+      <!-- Team Member 4 -->
+      <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-0 shadow">
+          <img src="https://source.unsplash.com/7u5mwbu7qLg/500x350" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h5 class="card-title mb-0">Team Member</h5>
+            <div class="card-text text-black-50">Web Developer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
                 @endforeach
 
 
