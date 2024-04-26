@@ -17,13 +17,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+ Route::get('/', function () {
+    return view('welcome');
+ });
 
 Auth::routes();
 
 Route::get('/', [AuthorController::class, 'index'])->name('home');
+
+// Creation of all the routes for Author controller
 
 Route::resource('/authors', AuthorController::class);
 

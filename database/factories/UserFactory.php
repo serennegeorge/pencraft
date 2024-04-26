@@ -47,14 +47,16 @@ class UserFactory extends Factory
     public function randomImage()
     {
         $images = [
-            'images/profiles/alexander-hipp-iEEBWgY_6lA-unsplash.jpg',
-            'images/profiles/cesar-rincon-XHVpWcr5grQ-unsplash.jpg',
-            'images/profiles/etty-fidele-UBJsHb3HLv8-unsplash.jpg',
-            'images/profiles/harps-joseph-tAvpDE7fXgY-unsplash.jpg',
-            'images/profiles/jason-moyer-A73ah5JKtVA-unsplash.jpg',
-            'images/profiles/jurica-koletic-7YVZYZeITc8-unsplash.jpg',
-            'images/profiles/nicolas-horn-MTZTGvDsHFY-unsplash.jpg',
-            'images/profiles/ryan-hoffman-Ft4p5E9HjTQ-unsplash.jpg',
+            'images/profiles/author1.jpg',
+            'images/profiles/author2.jpg',
+            'images/profiles/author3.jpg',
+            'images/profiles/author4.jpg',
+            'images/profiles/author5.jpg',
+            'images/profiles/author6.jpg',
+            'images/profiles/author7.jpg',
+            'images/profiles/author8.jpg',
+            'images/profiles/author9.jpg',
+            'images/profiles/author10.webp',
         ];
 
         // Select a random index from the array

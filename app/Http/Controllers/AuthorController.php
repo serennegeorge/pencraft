@@ -11,12 +11,14 @@ class AuthorController extends Controller
     /**
      * Display a listing of the resource.
      * View list of all authors.
+     * The index fetching all and views the author list.
      */
     public function index()
     {
         $author_data = User::all();
 
         return view('pages.default.authors-list', compact('author_data'));
+
         return view('pages.testing.authors-list', compact('author_data'));
 
     }
@@ -37,6 +39,8 @@ class AuthorController extends Controller
 
     /**
      * Display the specified resource.
+     * Functionality to show an author
+     * The
      */
     public function show(string $id)
     {
@@ -60,6 +64,7 @@ class AuthorController extends Controller
         $writing =Writing::find($writing_id);
 
         return view('pages.default.author-writing', compact('author', 'writing'));
+
         return view('pages.testing.author-writing', compact('author', 'writing'));
 
 
