@@ -41,7 +41,7 @@
             @foreach ($author_data as $data)
 
             <div class="col-md-6 order-md-2">
-                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Author"
+                <img src="{{ $data-> getImage() }}" alt="Author"
                     class="img-fluid border-white border-w-5 w-50 w-md-80 w-lg-60 rounded-circle">
             </div>
             <div class="col-md-6 flex-valign text-md-right">
