@@ -7,7 +7,7 @@
             @foreach ($author_data as $data)
 
             <div class="col-md-12">
-                <img style="width: 150px; height: 150px" <img src="{{ $data->getImage() }}" alt="">
+                <img style="width: 150px; height: 150px" src="{{ $data->getImage() }}" alt="">
                 <p>Author: {{ $data->name }}</p>
                 <p>Bio: {{ $data->bio }}</p>
                 <p><a href="{{ $data->getLink() }}">Link</a></p>

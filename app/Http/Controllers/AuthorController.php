@@ -17,6 +17,7 @@ class AuthorController extends Controller
     {
         $author_data = User::all();
 
+
         return view('pages.default.authors-list', compact('author_data'));
 
         return view('pages.testing.authors-list', compact('author_data'));
@@ -64,6 +65,7 @@ class AuthorController extends Controller
         $writing =Writing::find($writing_id);
 
         return view('pages.default.author-writing', compact('author', 'writing'));
+
 
         return view('pages.testing.author-writing', compact('author', 'writing'));
 
