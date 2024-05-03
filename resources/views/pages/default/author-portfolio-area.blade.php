@@ -6,6 +6,13 @@
         <small>Secondary Text</small>
     </h1>
 
+    <div class="text-center my-3">
+        <div class="filter-btn btn btn-primary">All</div>
+        <div class="filter-btn btn btn-primary">Poems</div>
+        <div class="filter-btn btn btn-primary">Articles</div>
+        <div class="filter-btn btn btn-primary">Stories</div>
+    </div>
+
     @foreach ($writing_data as $writing)
 
     <!-- Project One -->

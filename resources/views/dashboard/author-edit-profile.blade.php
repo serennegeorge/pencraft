@@ -1,4 +1,4 @@
-<x-mylayouts.layout-dashboard-default>
+<x-mylayouts.layout-dashboard-sidebar>
 
 
     <form action="{{ route ('dashboard.authors.update',[author->id]) }}" method="POST">
@@ -38,7 +38,6 @@
                         <input type="text" class="form-control" name="name" id="name" value="{{ $author->name }}">
                     </div>
 
-
                     <div class="form-group">
                         <label for="bio">Bio:</label>
                         <textarea class="form-control" rows="5" name="bio" id="bio">{{ $author->bio }}</textarea>
@@ -51,11 +50,10 @@
 
                 </form>
 
-
             </div>
         </div>
 
 
-</x-mylayouts.layout-dashboard-default>
+</x-mylayouts.layout-dashboard-sidebar>
 author-edit ... p.blade.php
 Displaying author-edit-profile-bootstrap.blade.php.

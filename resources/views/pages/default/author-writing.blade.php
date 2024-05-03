@@ -12,7 +12,6 @@
             <div class="content">
                 <div class="writing-image text-center">
                     <img style="max-height: 200px; text-align: center;" src="{{ $writing->getImage() }}" alt="Image">
-                    src="{{ $writing->getImage() }}" alt="Image">
                 </div>
 
                 {{ $writing->description }}

@@ -1,5 +1,6 @@
 <x-mylayouts.layout-dashboard-default>
 
+    <!-- Source: https://laravel.com/docs/11.x/validation#quick-displaying-the-validation-errors -->
 
 
     <!-- /resources/views/post/create.blade.php -->
@@ -18,30 +19,72 @@
 
     <!-- Create Post Form -->
 
-    <form action="{{ route('dashboard.writings.store') }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        @method('POST')
-
-        <p>Type</p>
-        <p><input type="text" name="type"></p>
-        <p>Title</p>
-        <p><input type="text" name="title"></p>
-        <p>Description</p>
-        <p><input type="text" name="description"></p>
-        <p>Image</p>
-        <p><input type="file" name="image"></p>
-        <p>Read Time</p>
-        <p><input type="text" name="read_time"></p>
-        <p>Read Unit</p>
-        <p><input type="text" name="read_unit"></p>
+    <style>
+        .profile-edit-image {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
 
 
-        <p>
-            <button type="submit">Click</button>
-            <a href="{{ route('dashboard.authors.index') }}">Cancel</a>
-        </p>
+    <div class="card1">
+        <div class="card-body1">
 
-    </form>
+            <h1>TITLE GOES HERE</h1>
+
+            <form action="{{ route('dashboard.writings.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('POST')
+
+                <div class="form-group">
+                    <label for="type">Type:</label>
+                    <select name="type" id="type" class="form-control">
+                        <option value="story">Story</option>
+                        <option value="article">Article</option>
+                        <option value="poem">Poem</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <input type="text" class="form-control" id="title" name="title" value="">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea class="form-control" rows="5" name="description" id="description"></textarea>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="image">Image:</label>
+                    <input type="file" class="form-control" name="image" id="image">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="read_time">Read Time:</label>
+                    <input type="text" class="form-control" name="read_time" id="read_time" value="1">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="read_unit">Read Unit</label>
+                    <select name="read_unit" id="read_unit" class="form-control">
+                        <option value="minutes">Minute(s)</option>
+                        <option value="hours">Hour(s)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Create</button>
+                    <a class="btn btn-danger" href="{{ route('dashboard.authors.index') }}">Cancel</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
 
 
 </x-mylayouts.layout-dashboard-default>

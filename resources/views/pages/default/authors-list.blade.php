@@ -324,11 +324,10 @@
                                 src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
                         </div>
                         <div class="card-text pt-1">
-                            <h5 class="member-name mb-0 text-center text-primary font-weight-bold">Ronald Reid</h5>
+                            <h5 class="member-name mb-0 text-center text-primary font-weight-bold">{{ $data->name }}</h5>
                             <div class="mb-3 text-center">iOS Developer</div>
-                            <div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
-                                eget dolor. Vivamus eget eros vestibulum, accumsan ante viverra, condimentum tellus.
-                            </div>
+                            <div>{{ $data->bio }}</div>
+                            <p><a href="{{ $data->getLink() }}">Link</a></p>
                         </div>
                     </div>
                     <!--//card-body-->
