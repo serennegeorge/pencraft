@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request\UpdateProfileRequest;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\storage;
 
 class AuthorDashboardController extends Controller
 {
@@ -13,10 +16,11 @@ class AuthorDashboardController extends Controller
     public function index()
     {
         $author = Auth::user();
+        $data = Auth::user();
 
         $writing_data = $author->writings;
 
-        return view('dashboard.author-dashboard', compact('author', 'writing_data'));
+        return view('dashboard.author-dashboard', compact('author', 'writing_data','data'));
     }
 
     /**
@@ -56,12 +60,13 @@ class AuthorDashboardController extends Controller
     public function update(UpdateProfileRequest $request, string $id)
     {
         $validated = $request->validated();
+
         $author = User::find($id);
         $author->name = $validated['name'];
         $author->bio = $validated['bio'];
 
         if ($request->has('image')) {
-            $author->profile->$this->imageUpload($validated['image']);
+            $author->profile = $this->imageUpload($validated['image']);
         }
         $author->save();
 
