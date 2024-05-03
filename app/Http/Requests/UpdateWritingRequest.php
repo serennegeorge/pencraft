@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StorePostWriting extends FormRequest
+class UpdateWritingRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,8 @@ class StorePostWriting extends FormRequest
         return [
             'type' => 'required|string|min:2|max:255',
             'title' => 'required|string|min:2|max:255',
-            'description' => 'required|string|min:2|max:255',
-            'image' => 'required|image|mimes:png,jpg,jpeg,gif,webp|max:20480',
+            'description' => 'required|string|min:2|max:3000',
+            'image' => 'sometimes|image|mimes:png,jpg,jpeg,gif,webp|max:20480',
             'read_time' => 'required|integer|max:10',
             'read_unit' => 'required|string|min:2|max:255',
         ];

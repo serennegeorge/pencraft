@@ -1,7 +1,6 @@
 <x-mylayouts.layout-dashboard-default>
 
 
-
     <form action="{{ route ('dashboard.authors.update',[author->id]) }}" method="POST">
         @csrf
         @method('PUT')
