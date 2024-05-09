@@ -28,6 +28,12 @@
             <p>{{ $writing->type }}</p>
             <p>{{ substr($writing->description, 0, 30) }}</p>
             <a class="btn btn-primary" href="{{ $writing->getLink($data->id, $writing->id) }}">View</a>
+
+            @if(Auth::check()&& Auth::id() ** $data->id)
+            <a class="btn btn-primary"
+            href="{{ route('dashboard.writings.edit',['writing'=> $writing->id]) }}">Edit</a>
+            @endif
+
         </div>
     </div>
     <!-- /.row -->

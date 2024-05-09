@@ -1,5 +1,4 @@
 {{-- Source: https://bootdey.com/snippets/view/Profile-bio --}}
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -76,12 +75,11 @@
                         <span><strong>Job:</strong> Web Developer</span>
                         <span><strong>Position:</strong> Web Designer</span>
                         <hr>
-                        <h5>Bio</h5>
                         <p>{{ $data->bio }}</p>
 
 
                         <h5>Follow on Social Media</h5>
-                        <a style="background-color: rgb(78, 17, 209)" class="border border-1 p-5 d-inline-block"
+                        <a style="background-color: rgb(209, 120, 17)" class="border border-1 p-5 d-inline-block"
                             href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f text-light"></i></a>
                         <a style="background-color: rgb(209, 120, 17)" class="border border-1 p-5 d-inline-block"
                             href="https://www.facebook.com/"><i class="fa-brands fa-linkedin-in text-light"></i></a>
